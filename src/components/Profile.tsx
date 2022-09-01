@@ -2,22 +2,21 @@ import React, { FC, ReactNode } from 'react';
 import { information } from '../Information';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { grey } from '@mui/material/colors';
 
 function Profile(){
   return (
     <Box>
-      <Typography id='education' variant='h2' mt={4} mb={4}>Education</Typography>
-      {information.education.map((education, i)=>{
-        return (
-          <ItemEdu key={`edu-${i}`} education={education}/>
-        )
-      })}
-      
       <Typography id='job-experience' variant='h2' mt={4} mb={4}>Job experience</Typography>
       {information.jobs.map((job, i)=>{
         return (
           <ItemJob key={`job-${i}`} job={job}/>
+        )
+      })}
+
+      <Typography id='education' variant='h2' mt={4} mb={4}>Education</Typography>
+      {information.education.map((education, i)=>{
+        return (
+          <ItemEdu key={`edu-${i}`} education={education}/>
         )
       })}
 
@@ -92,7 +91,7 @@ type PropsCert = {
 const ItemEdu: FC<PropsEdu> = (props: PropsEdu) => {
   return (
     <Box mt={2} mb={2} ml={1}>
-      <Typography color={grey[700]}>{props.education.date}</Typography>
+      <Typography color='text.disabled'>{props.education.date}</Typography>
       <Typography>{props.education.ja}</Typography>
       <Typography>{props.education.en}</Typography>
     </Box>
@@ -102,7 +101,7 @@ const ItemEdu: FC<PropsEdu> = (props: PropsEdu) => {
 const ItemJob: FC<PropsJob> = (props: PropsJob) => {
   return (
     <Box mt={2} mb={2} ml={1}>
-      <Typography color={grey[700]}>{props.job.date}</Typography>
+      <Typography color='text.disabled'>{props.job.date}</Typography>
       <Typography>{props.job.ja}</Typography>
       <Typography>{props.job.en}</Typography>
     </Box>

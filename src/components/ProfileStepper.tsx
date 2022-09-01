@@ -1,12 +1,10 @@
-import React, { FC, ReactNode, useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import StepContent from '@mui/material/StepContent';
-import { grey } from '@mui/material/colors';
 
 type Step = {
   id: string,
@@ -18,16 +16,16 @@ const onClickStr = (id: string) => {
 }
 const steps = [
   {
-    id: 'education',
-    label: <Typography style={{cursor: 'pointer', color: grey[900]}}>Education</Typography>,
+    id: 'job-experience',
+    label: <Typography style={{cursor: 'pointer'}}>Job experience</Typography>,
     description: <Box></Box>
   },{
-    id: 'job-experience',
-    label: <Typography style={{cursor: 'pointer', color: grey[900]}}>Job experience</Typography>,
+    id: 'education',
+    label: <Typography style={{cursor: 'pointer'}}>Education</Typography>,
     description: <Box></Box>
   },{
     id: 'publications',
-    label: <Typography style={{cursor: 'pointer', color: grey[900]}}>Publications</Typography>,
+    label: <Typography style={{cursor: 'pointer'}}>Publications</Typography>,
     description: <Box>
       <Typography style={{cursor: 'pointer'}} onClick={()=>onClickStr('journal')} gutterBottom>Journal article</Typography>
       <Typography style={{cursor: 'pointer'}} onClick={()=>onClickStr('int-conf')} gutterBottom>International conference</Typography>
@@ -35,7 +33,7 @@ const steps = [
     </Box>
   },{
     id: 'skills',
-    label: <Typography style={{cursor: 'pointer', color: grey[900]}}>Skills</Typography>,
+    label: <Typography style={{cursor: 'pointer'}}>Skills</Typography>,
     description: <Box>
       <Typography style={{cursor: 'pointer'}} onClick={()=>onClickStr('programming')} gutterBottom>Programming</Typography>
       <Typography style={{cursor: 'pointer'}} onClick={()=>onClickStr('certificates')} gutterBottom>Certificates</Typography>
