@@ -1,12 +1,14 @@
 import React from "react";
+import Box from '@mui/material/Box';
+import Typography from "@mui/material/Typography";
 
 function Footer(){
   return (
-    <div className="App-footer">
-      <p>
-        2022 &copy; Naoki Tateyama
-      </p>
-    </div>
+    <footer>
+      <Box style={{textAlign: 'center'}} mt={2} mb={2}>
+        <Typography>2022 &copy; Naoki Tateyama</Typography>
+      </Box>
+    </footer>
   )
 }
 

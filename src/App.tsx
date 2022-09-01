@@ -1,16 +1,29 @@
 import React from 'react';
-import './App.css';
-import Header from './Header';
-import Body from './Body';
+import Profile from './components/Profile';
+import ProfileStepper from 'components/ProfileStepper';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { ThemeProvider } from '@mui/material/styles';
+
+import Header from 'Header';
 import Footer from './Footer';
 
+import { theme } from './styles/theme';
+
 function App() {
+  const isPC = useMediaQuery('(min-width:600px)');
   return (
-    <div className="App">
+    <ThemeProvider theme={theme}>
       <Header/>
-      <Body/>
+      <Container maxWidth='lg'>
+        <Box style={{display: 'flex'}}>
+          {isPC && <ProfileStepper/>}
+          <Profile/>
+        </Box>
+      </Container>
       <Footer/>
-    </div>
+    </ThemeProvider>
   );
 }
 
