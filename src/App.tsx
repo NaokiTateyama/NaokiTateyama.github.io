@@ -6,8 +6,8 @@ import Container from '@mui/material/Container';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { ThemeProvider } from '@mui/material/styles';
 
-import Header from 'Header';
-import Footer from './Footer';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 import { theme } from './styles/theme';
 
