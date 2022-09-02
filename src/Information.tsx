@@ -1,25 +1,29 @@
 export const information = {
-  education: [
-    {
-      date: '2019.4~2022.9',
-      ja: '東京大学大学院新領域創成科学研究科 人間環境学専攻 割沢・福井・米谷・伴研究室 博士課程修了 / 博士（環境学）',
-      en: 'Doctor of Environmental Studies / Human & Environment Informatics Lab., Department of Human and Engineered Environmental Studies, Graduate School of Frontier Sciences, The University of Tokyo'
-    },{
-      date: '2017.4~2019.3',
-      ja: '東京大学大学院工学系研究科 機械工学専攻 中尾研究室 修士課程修了 / 修士（工学）',
-      en: 'Master of engineering / Nakao Lab., Department of Mechanical Engineering, Graduate School of Engineering, The University of Tokyo'
-    },{
-      date: '2013.4~2017.3',
-      ja: '東京大学工学部 機械工学科 卒業 / 学士（工学）',
-      en: 'Bachelor of Engineering / Department of Mechanical Engineering, Faculty of Engineering, The University of Tokyo'
-    }
-  ],
   jobs: [
     {
-      date: '2019.4~2022.3',
+      date: '2022.10 ~',
+      ja: 'サイボウズ株式会社',
+      en: 'Cybozu, Inc.'
+    },{
+      date: '2019.4 ~ 2022.3',
       ja: '日本学術振興会 特別研究員（DC1）',
       en: 'JSPS Research Fellow DC1'
     }  
+  ],
+  education: [
+    {
+      date: '2019.4 ~ 2022.9',
+      ja: '東京大学大学院新領域創成科学研究科 人間環境学専攻 割沢・福井・米谷・伴研究室 博士課程修了 / 博士（環境学）',
+      en: 'Doctor of Environmental Studies / Human & Environment Informatics Lab., Department of Human and Engineered Environmental Studies, Graduate School of Frontier Sciences, The University of Tokyo'
+    },{
+      date: '2017.4 ~ 2019.3',
+      ja: '東京大学大学院工学系研究科 機械工学専攻 中尾研究室 修士課程修了 / 修士（工学）',
+      en: 'Master of engineering / Nakao Lab., Department of Mechanical Engineering, Graduate School of Engineering, The University of Tokyo'
+    },{
+      date: '2013.4 ~ 2017.3',
+      ja: '東京大学工学部 機械工学科 卒業 / 学士（工学）',
+      en: 'Bachelor of Engineering / Department of Mechanical Engineering, Faculty of Engineering, The University of Tokyo'
+    }
   ],
   publications: {
     journal: [

@@ -1,5 +1,5 @@
 # NaokiTateyama.github.io
 
-This is the repository of Tateyama's profile page.
+This is the repository for Tateyama's profile page on Github Pages.
 
-Profile page is [here](https://naokitateyama.github.io/).
+The profile page is [here](https://naokitateyama.github.io/).

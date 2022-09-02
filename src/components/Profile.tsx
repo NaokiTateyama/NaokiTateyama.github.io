@@ -2,48 +2,53 @@ import React, { FC, ReactNode } from 'react';
 import { information } from '../Information';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
 
 function Profile(){
   return (
     <Box>
-      <Typography id='job-experience' variant='h2' mt={4} mb={4}>Job experience</Typography>
+      <H2 id='job-experience' title={'Job experience'}/>
+      <Divider sx={{ borderBottomWidth: 2 }}/>
       {information.jobs.map((job, i)=>{
         return (
           <ItemJob key={`job-${i}`} job={job}/>
         )
       })}
 
-      <Typography id='education' variant='h2' mt={4} mb={4}>Education</Typography>
+      <H2 id='education' title={'Education'}/>
+      <Divider sx={{ borderBottomWidth: 2 }}/>
       {information.education.map((education, i)=>{
         return (
           <ItemEdu key={`edu-${i}`} education={education}/>
         )
       })}
 
-      <Typography id='publications' variant='h2' mt={4} mb={4}>Publications</Typography>
-      <Typography id='journal' variant='h3' mt={4} mb={4}>学術雑誌 / Journal article</Typography>
+      <H2 id='publications' title={'Publications'}/>
+      <Divider sx={{ borderBottomWidth: 2 }}/>
+      <H3 id='journal' title={'学術雑誌 / Journal article'}/>
       {information.publications.journal.map((publication, i)=>{
         return (
           <ItemPub key={`journal-${i}`} publication={publication}/>
         )
       })}
-      <Typography id='int-conf' variant='h3' mt={4} mb={4}>国際会議 / International conference</Typography>
+      <H3 id='int-conf' title={'国際会議 / International conference'}/>
       {information.publications.int_conf.map((publication, i)=>{
         return (
           <ItemPub key={`int-${i}`} publication={publication}/>
         )
       })}
-      <Typography id='dom-conf' variant='h3' mt={4} mb={4}>国内会議 / Domestic conference</Typography>
+      <H3 id='dom-conf' title={'国内会議 / Domestic conference'}/>
       {information.publications.dom_conf.map((publication, i)=>{
         return (
           <ItemPub key={`dom-${i}`} publication={publication}/>
         )
       })}
 
-      <Typography id='skills' variant='h2' mt={4} mb={4}>Skills</Typography>
-      <Typography id='programming' variant='h3' mt={4} mb={4}>Programming</Typography>
+      <H2 id='skills' title={'Skills'}/>
+      <Divider sx={{ borderBottomWidth: 2 }}/>
+      <H3 id='programming' title={'Programming'}/>
       <ItemProg programming={information.skills.programming}/>
-      <Typography id='certificates' variant='h3' mt={4} mb={4}>Certificates</Typography>
+      <H3 id='certificates' title={'Certificates'}/>
       {information.skills.certificates.map((certificate, i)=>{
         return (
           <ItemCert key={`cert-${i}`} certificate={certificate}/>
@@ -53,6 +58,11 @@ function Profile(){
   )
 }
 export default Profile
+
+type PropsMidashi = {
+  id: string,
+  title: string
+}
 
 type PropsEdu = {
   education: {
@@ -86,6 +96,18 @@ type PropsCert = {
     ja: string | ReactNode,
     en: string | ReactNode
   }
+}
+
+const H2: FC<PropsMidashi> = (props: PropsMidashi) => {
+  return (
+    <Typography id={props.id} variant='h2' mt={4} mb={2}>{props.title}</Typography>
+  )
+}
+
+const H3: FC<PropsMidashi> = (props: PropsMidashi) => {
+  return (
+    <Typography id={props.id} variant='h3' mt={4} mb={4}>{props.title}</Typography>
+  )
 }
 
 const ItemEdu: FC<PropsEdu> = (props: PropsEdu) => {

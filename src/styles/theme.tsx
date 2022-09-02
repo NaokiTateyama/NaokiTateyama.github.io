@@ -1,5 +1,4 @@
 import { createTheme } from '@mui/material/styles';
-import { grey } from '@mui/material/colors';
 
 export const theme = createTheme({
   palette: {
@@ -12,9 +11,6 @@ export const theme = createTheme({
     },
     h3: {
       fontSize: '1.5rem'
-    },
-    body1: {
-      fontSize: '1rem'
     }
   }
 });

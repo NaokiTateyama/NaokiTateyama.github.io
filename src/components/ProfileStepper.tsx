@@ -6,13 +6,16 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import StepContent from '@mui/material/StepContent';
 
-type Step = {
+type StepType = {
   id: string,
   label: string | ReactNode,
   description: string | ReactNode
 }
-const onClickStr = (id: string) => {
-  window.location.hash = id
+const jumpTo = (id: string) => {
+  let target = document.getElementById(id);
+  if (target !== null){
+    target.scrollIntoView({behavior: 'smooth'});
+  }
 }
 const steps = [
   {
@@ -27,25 +30,25 @@ const steps = [
     id: 'publications',
     label: <Typography style={{cursor: 'pointer'}}>Publications</Typography>,
     description: <Box>
-      <Typography style={{cursor: 'pointer'}} onClick={()=>onClickStr('journal')} gutterBottom>Journal article</Typography>
-      <Typography style={{cursor: 'pointer'}} onClick={()=>onClickStr('int-conf')} gutterBottom>International conference</Typography>
-      <Typography style={{cursor: 'pointer'}} onClick={()=>onClickStr('dom-conf')} gutterBottom>Domestic conference</Typography>
+      <Typography style={{cursor: 'pointer'}} onClick={()=>jumpTo('journal')} gutterBottom>Journal article</Typography>
+      <Typography style={{cursor: 'pointer'}} onClick={()=>jumpTo('int-conf')} gutterBottom>International conference</Typography>
+      <Typography style={{cursor: 'pointer'}} onClick={()=>jumpTo('dom-conf')} gutterBottom>Domestic conference</Typography>
     </Box>
   },{
     id: 'skills',
     label: <Typography style={{cursor: 'pointer'}}>Skills</Typography>,
     description: <Box>
-      <Typography style={{cursor: 'pointer'}} onClick={()=>onClickStr('programming')} gutterBottom>Programming</Typography>
-      <Typography style={{cursor: 'pointer'}} onClick={()=>onClickStr('certificates')} gutterBottom>Certificates</Typography>
-  </Box>
+      <Typography style={{cursor: 'pointer'}} onClick={()=>jumpTo('programming')} gutterBottom>Programming</Typography>
+      <Typography style={{cursor: 'pointer'}} onClick={()=>jumpTo('certificates')} gutterBottom>Certificates</Typography>
+    </Box>
   }
 ]
 
 function ProfileStepper(){
   const [activeStep, setActiveStep] = useState(0);
-  const onClickStep = (i: number, step: Step) => {
+  const onClickStep = (i: number, step: StepType) => {
     setActiveStep(i);
-    window.location.hash = step.id;
+    jumpTo(step.id);
   }
 
   return (
