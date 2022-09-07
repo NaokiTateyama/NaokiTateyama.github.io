@@ -13,7 +13,7 @@ export const information = {
   education: [
     {
       date: '2019.4 ~ 2022.9',
-      ja: '東京大学大学院新領域創成科学研究科 人間環境学専攻 割沢・福井・米谷・伴研究室 博士課程修了 / 博士（環境学）',
+      ja: '東京大学大学院新領域創成科学研究科 人間環境学専攻 割澤・福井・米谷・伴研究室 博士課程修了 / 博士（環境学）',
       en: 'Doctor of Environmental Studies / Human & Environment Informatics Lab., Department of Human and Engineered Environmental Studies, Graduate School of Frontier Sciences, The University of Tokyo'
     },{
       date: '2017.4 ~ 2019.3',

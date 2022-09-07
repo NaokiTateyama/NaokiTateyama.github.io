@@ -6,17 +6,14 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import StepContent from '@mui/material/StepContent';
 
+import { jumpTo, ID } from 'utils/JumpTo';
+
 type StepType = {
   id: string,
   label: string | ReactNode,
   description: string | ReactNode
 }
-const jumpTo = (id: string) => {
-  let target = document.getElementById(id);
-  if (target !== null){
-    target.scrollIntoView({behavior: 'smooth'});
-  }
-}
+
 const steps = [
   {
     id: 'job-experience',
@@ -30,16 +27,16 @@ const steps = [
     id: 'publications',
     label: <Typography style={{cursor: 'pointer'}}>Publications</Typography>,
     description: <Box>
-      <Typography style={{cursor: 'pointer'}} onClick={()=>jumpTo('journal')} gutterBottom>Journal article</Typography>
-      <Typography style={{cursor: 'pointer'}} onClick={()=>jumpTo('int-conf')} gutterBottom>International conference</Typography>
-      <Typography style={{cursor: 'pointer'}} onClick={()=>jumpTo('dom-conf')} gutterBottom>Domestic conference</Typography>
+      <Typography style={{cursor: 'pointer'}} onClick={()=>jumpTo(ID.JOURNAL)} gutterBottom>Journal article</Typography>
+      <Typography style={{cursor: 'pointer'}} onClick={()=>jumpTo(ID.INT_CONF)} gutterBottom>International conference</Typography>
+      <Typography style={{cursor: 'pointer'}} onClick={()=>jumpTo(ID.DOM_CONF)} gutterBottom>Domestic conference</Typography>
     </Box>
   },{
     id: 'skills',
     label: <Typography style={{cursor: 'pointer'}}>Skills</Typography>,
     description: <Box>
-      <Typography style={{cursor: 'pointer'}} onClick={()=>jumpTo('programming')} gutterBottom>Programming</Typography>
-      <Typography style={{cursor: 'pointer'}} onClick={()=>jumpTo('certificates')} gutterBottom>Certificates</Typography>
+      <Typography style={{cursor: 'pointer'}} onClick={()=>jumpTo(ID.PROGRAMMING)} gutterBottom>Programming</Typography>
+      <Typography style={{cursor: 'pointer'}} onClick={()=>jumpTo(ID.CERTIFICATES)} gutterBottom>Certificates</Typography>
     </Box>
   }
 ]
@@ -54,7 +51,7 @@ function ProfileStepper(){
   return (
     <Box>
       <Box sx={{ minWidth: 200, top: '20px', position: 'sticky' }} mr={2}>
-        <Stepper activeStep={activeStep} orientation="vertical">
+        <Stepper activeStep={activeStep} orientation='vertical'>
           {steps.map((step,i)=>{
             return (
               <Step key={i} active={true}>

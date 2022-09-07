@@ -4,54 +4,56 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 
+import { ID } from 'utils/JumpTo';
+
 function Profile(){
   return (
     <Box>
-      <H2 id='job-experience' title={'Job experience'}/>
+      <H2 id={ID.JOB_EXPERIENCE} title={'Job experience'}/>
       <Divider sx={{ borderBottomWidth: 2 }}/>
       {information.jobs.map((job, i)=>{
         return (
-          <ItemJob key={`job-${i}`} job={job}/>
+          <ItemJob key={`${ID.JOB_EXPERIENCE}-${i}`} job={job}/>
         )
       })}
 
-      <H2 id='education' title={'Education'}/>
+      <H2 id={ID.EDUCATION} title={'Education'}/>
       <Divider sx={{ borderBottomWidth: 2 }}/>
       {information.education.map((education, i)=>{
         return (
-          <ItemEdu key={`edu-${i}`} education={education}/>
+          <ItemEdu key={`${ID.EDUCATION}-${i}`} education={education}/>
         )
       })}
 
-      <H2 id='publications' title={'Publications'}/>
+      <H2 id={ID.PUBLICATIONS} title={'Publications'}/>
       <Divider sx={{ borderBottomWidth: 2 }}/>
-      <H3 id='journal' title={'学術雑誌 / Journal article'}/>
+      <H3 id={ID.JOURNAL} title={'学術雑誌 / Journal article'}/>
       {information.publications.journal.map((publication, i)=>{
         return (
-          <ItemPub key={`journal-${i}`} publication={publication}/>
+          <ItemPub key={`${ID.JOURNAL}-${i}`} publication={publication}/>
         )
       })}
-      <H3 id='int-conf' title={'国際会議 / International conference'}/>
+      <H3 id={ID.INT_CONF} title={'国際会議 / International conference'}/>
       {information.publications.int_conf.map((publication, i)=>{
         return (
-          <ItemPub key={`int-${i}`} publication={publication}/>
+          <ItemPub key={`${ID.INT_CONF}-${i}`} publication={publication}/>
         )
       })}
-      <H3 id='dom-conf' title={'国内会議 / Domestic conference'}/>
+      <H3 id={ID.DOM_CONF} title={'国内会議 / Domestic conference'}/>
       {information.publications.dom_conf.map((publication, i)=>{
         return (
-          <ItemPub key={`dom-${i}`} publication={publication}/>
+          <ItemPub key={`${ID.DOM_CONF}-${i}`} publication={publication}/>
         )
       })}
 
-      <H2 id='skills' title={'Skills'}/>
+      <H2 id={ID.SKILLS} title={'Skills'}/>
       <Divider sx={{ borderBottomWidth: 2 }}/>
-      <H3 id='programming' title={'Programming'}/>
+      <H3 id={ID.PROGRAMMING} title={'Programming'}/>
       <ItemProg programming={information.skills.programming}/>
-      <H3 id='certificates' title={'Certificates'}/>
+      <H3 id={ID.CERTIFICATES} title={'Certificates'}/>
       {information.skills.certificates.map((certificate, i)=>{
         return (
-          <ItemCert key={`cert-${i}`} certificate={certificate}/>
+          <ItemCert key={`${ID.CERTIFICATES}-${i}`} certificate={certificate}/>
         )
       })}
     </Box>

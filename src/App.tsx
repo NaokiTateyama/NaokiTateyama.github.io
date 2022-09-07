@@ -17,7 +17,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header/>
+      <Header isPC={isPC}/>
       <Container maxWidth='lg'>
         <Box style={{display: 'flex'}}>
           {isPC && <ProfileStepper/>}
