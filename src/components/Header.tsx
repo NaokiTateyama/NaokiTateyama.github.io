@@ -63,7 +63,7 @@ function Header(props: HeaderProps){
               }}
               anchorEl={anchorEl}
               anchorOrigin={{
-                vertical: 'top',
+                vertical: 'bottom',
                 horizontal: 'right',
               }}
               keepMounted
