@@ -1,4 +1,8 @@
 export const information = {
+  about: {
+    ja: <span>ソフトウェアエンジニアとして勤務．人のストレスや行動変容に関する研究に従事．人の心に働きかけるようなインタフェースの開発に関心を持つ．</span>,
+    en: <span>I am working as a software engineer. I was engaged in research on human stress and behavior change. I am interested in developing interfaces that move people's hearts and minds.</span>
+  },
   jobs: [
     {
       date: '2022.10 ~',

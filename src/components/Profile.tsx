@@ -9,6 +9,10 @@ import { ID } from 'utils/JumpTo';
 function Profile(){
   return (
     <Box>
+      <H2 id={ID.ABOUT} title={'About'}/>
+      <Divider sx={{ borderBottomWidth: 2 }}/>
+      <ItemAbout about={information.about}/>
+
       <H2 id={ID.JOB_EXPERIENCE} title={'Job experience'}/>
       <Divider sx={{ borderBottomWidth: 2 }}/>
       {information.jobs.map((job, i)=>{
@@ -22,6 +26,17 @@ function Profile(){
       {information.education.map((education, i)=>{
         return (
           <ItemEdu key={`${ID.EDUCATION}-${i}`} education={education}/>
+        )
+      })}
+
+      <H2 id={ID.SKILLS} title={'Skills'}/>
+      <Divider sx={{ borderBottomWidth: 2 }}/>
+      <H3 id={ID.PROGRAMMING} title={'Programming'}/>
+      <ItemProg programming={information.skills.programming}/>
+      <H3 id={ID.CERTIFICATES} title={'Certificates'}/>
+      {information.skills.certificates.map((certificate, i)=>{
+        return (
+          <ItemCert key={`${ID.CERTIFICATES}-${i}`} certificate={certificate}/>
         )
       })}
 
@@ -45,17 +60,6 @@ function Profile(){
           <ItemPub key={`${ID.DOM_CONF}-${i}`} publication={publication}/>
         )
       })}
-
-      <H2 id={ID.SKILLS} title={'Skills'}/>
-      <Divider sx={{ borderBottomWidth: 2 }}/>
-      <H3 id={ID.PROGRAMMING} title={'Programming'}/>
-      <ItemProg programming={information.skills.programming}/>
-      <H3 id={ID.CERTIFICATES} title={'Certificates'}/>
-      {information.skills.certificates.map((certificate, i)=>{
-        return (
-          <ItemCert key={`${ID.CERTIFICATES}-${i}`} certificate={certificate}/>
-        )
-      })}
     </Box>
   )
 }
@@ -64,6 +68,13 @@ export default Profile
 type PropsMidashi = {
   id: string,
   title: string
+}
+
+type PropsAbout = {
+  about: {
+    ja: string | ReactNode,
+    en: string | ReactNode
+  }
 }
 
 type PropsEdu = {
@@ -111,6 +122,15 @@ const H3: FC<PropsMidashi> = (props: PropsMidashi) => {
     <Typography id={props.id} variant='h3' mt={4} mb={4}>{props.title}</Typography>
   )
 }
+
+const ItemAbout: FC<PropsAbout> = (props: PropsAbout) => {
+  return (
+    <Box mt={2} mb={2} ml={1}>
+      <Typography>{props.about.ja}</Typography>
+      <Typography>{props.about.en}</Typography>
+    </Box>
+  )
+};
 
 const ItemEdu: FC<PropsEdu> = (props: PropsEdu) => {
   return (

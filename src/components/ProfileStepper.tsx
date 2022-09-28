@@ -7,6 +7,7 @@ import StepLabel from '@mui/material/StepLabel';
 import StepContent from '@mui/material/StepContent';
 
 import { jumpTo, ID } from 'utils/JumpTo';
+import { styled } from '@mui/material/styles';
 
 type StepType = {
   id: string,
@@ -16,6 +17,10 @@ type StepType = {
 
 const steps = [
   {
+    id: 'about',
+    label: <Typography style={{cursor: 'pointer'}}>About</Typography>,
+    description: <Box></Box>
+  },{
     id: 'job-experience',
     label: <Typography style={{cursor: 'pointer'}}>Job experience</Typography>,
     description: <Box></Box>
@@ -24,6 +29,13 @@ const steps = [
     label: <Typography style={{cursor: 'pointer'}}>Education</Typography>,
     description: <Box></Box>
   },{
+    id: 'skills',
+    label: <Typography style={{cursor: 'pointer'}}>Skills</Typography>,
+    description: <Box>
+      <Typography style={{cursor: 'pointer'}} onClick={()=>jumpTo(ID.PROGRAMMING)} gutterBottom>Programming</Typography>
+      <Typography style={{cursor: 'pointer'}} onClick={()=>jumpTo(ID.CERTIFICATES)} gutterBottom>Certificates</Typography>
+    </Box>
+  },{
     id: 'publications',
     label: <Typography style={{cursor: 'pointer'}}>Publications</Typography>,
     description: <Box>
@@ -31,15 +43,12 @@ const steps = [
       <Typography style={{cursor: 'pointer'}} onClick={()=>jumpTo(ID.INT_CONF)} gutterBottom>International conference</Typography>
       <Typography style={{cursor: 'pointer'}} onClick={()=>jumpTo(ID.DOM_CONF)} gutterBottom>Domestic conference</Typography>
     </Box>
-  },{
-    id: 'skills',
-    label: <Typography style={{cursor: 'pointer'}}>Skills</Typography>,
-    description: <Box>
-      <Typography style={{cursor: 'pointer'}} onClick={()=>jumpTo(ID.PROGRAMMING)} gutterBottom>Programming</Typography>
-      <Typography style={{cursor: 'pointer'}} onClick={()=>jumpTo(ID.CERTIFICATES)} gutterBottom>Certificates</Typography>
-    </Box>
   }
 ]
+
+const CustomStepContent = styled(StepContent)({
+  '&.MuiStepContent-root': {borderLeft: '1px solid #757575'},
+});
 
 function ProfileStepper(){
   const [activeStep, setActiveStep] = useState(0);
@@ -59,9 +68,9 @@ function ProfileStepper(){
                   onClick={()=>onClickStep(i, step)}>
                   {step.label}
                 </StepLabel>
-                <StepContent>
+                <CustomStepContent>
                   {step.description}
-                </StepContent>
+                </CustomStepContent>
               </Step>
             )
           })}

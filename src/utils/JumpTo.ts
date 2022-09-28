@@ -1,4 +1,5 @@
 export const ID = {
+  ABOUT: 'about',
   JOB_EXPERIENCE: 'job-experience',
   EDUCATION: 'education',
   PUBLICATIONS: 'publications',

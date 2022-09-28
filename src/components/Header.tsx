@@ -73,10 +73,11 @@ function Header(props: HeaderProps){
               }}
               open={Boolean(anchorEl)}
               onClose={handleClose}>
+              <MenuItem sx={{ justifyContent: 'center', fontSize: '1.2rem', margin: 2 }} onClick={()=>handleJump(ID.ABOUT)}>About</MenuItem>
               <MenuItem sx={{ justifyContent: 'center', fontSize: '1.2rem', margin: 2 }} onClick={()=>handleJump(ID.JOB_EXPERIENCE)}>Job experience</MenuItem>
               <MenuItem sx={{ justifyContent: 'center', fontSize: '1.2rem', margin: 2 }} onClick={()=>handleJump(ID.EDUCATION)}>Education</MenuItem>
-              <MenuItem sx={{ justifyContent: 'center', fontSize: '1.2rem', margin: 2 }} onClick={()=>handleJump(ID.PUBLICATIONS)}>Publications</MenuItem>
               <MenuItem sx={{ justifyContent: 'center', fontSize: '1.2rem', margin: 2 }} onClick={()=>handleJump(ID.SKILLS)}>Skills</MenuItem>
+              <MenuItem sx={{ justifyContent: 'center', fontSize: '1.2rem', margin: 2 }} onClick={()=>handleJump(ID.PUBLICATIONS)}>Publications</MenuItem>
             </Menu>
           </Toolbar>
         </AppBar>
