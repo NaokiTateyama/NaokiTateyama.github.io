@@ -17,14 +17,14 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header isPC={isPC}/>
-      <Container maxWidth='lg'>
-        <Box style={{display: 'flex'}}>
-          {isPC && <ProfileStepper/>}
-          <Profile/>
+      <Header isPC={isPC} />
+      <Container maxWidth="lg">
+        <Box style={{ display: 'flex' }}>
+          {isPC && <ProfileStepper />}
+          <Profile />
         </Box>
       </Container>
-      <Footer/>
+      <Footer />
     </ThemeProvider>
   );
 }

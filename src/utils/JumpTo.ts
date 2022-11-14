@@ -10,9 +10,9 @@ export const ID = {
   PROGRAMMING: 'programming',
   CERTIFICATES: 'certificates'
 };
-export function jumpTo(id: string){
+export function jumpTo(id: string) {
   let target = document.getElementById(id);
-  if (target !== null){
-    target.scrollIntoView({behavior: 'smooth'});
+  if (target !== null) {
+    target.scrollIntoView({ behavior: 'smooth' });
   }
-};
+}
