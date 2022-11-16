@@ -11,11 +11,23 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 import { jumpTo, ID } from 'utils/JumpTo';
 
-type HeaderProps = {
+type Props = {
   isPC: boolean;
+  name_ja: string;
+  name_en: string;
+  account: string;
+  appBarDataTestId?: string;
+  menuDataTestId?: string;
 };
 
-function Header(props: HeaderProps) {
+const Header = ({
+  isPC,
+  name_ja,
+  name_en,
+  account,
+  appBarDataTestId,
+  menuDataTestId
+}: Props): JSX.Element => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -35,7 +47,7 @@ function Header(props: HeaderProps) {
 
   return (
     <>
-      {!props.isPC && (
+      {!isPC && (
         <AppBar
           position="sticky"
           sx={{
@@ -44,6 +56,7 @@ function Header(props: HeaderProps) {
             backgroundImage: 'none !important',
             boxShadow: 'none !important'
           }}
+          data-testid={appBarDataTestId}
         >
           <Toolbar>
             <div style={{ flexGrow: 1 }}></div>
@@ -80,6 +93,7 @@ function Header(props: HeaderProps) {
               }}
               open={Boolean(anchorEl)}
               onClose={handleClose}
+              data-testid={menuDataTestId}
             >
               <MenuItem
                 sx={{ justifyContent: 'center', fontSize: '1.2rem', margin: 2 }}
@@ -117,20 +131,20 @@ function Header(props: HeaderProps) {
       )}
       <Box
         style={{ textAlign: 'center' }}
-        mt={props.isPC ? 3 : 0}
-        mb={props.isPC ? 3 : 0}
+        mt={isPC ? 3 : 0}
+        mb={isPC ? 3 : 0}
       >
         <Typography variant="h2" gutterBottom>
-          立山 尚樹
+          {name_ja}
         </Typography>
         <Typography variant="h2" gutterBottom>
-          Naoki Tateyama
+          {name_en}
         </Typography>
         <Box>
           <IconButton
             size="large"
             onClick={() =>
-              window.open('https://github.com/naoki-tateyama', '_blank')
+              window.open(`https://github.com/${account}`, '_blank')
             }
           >
             <GitHubIcon fontSize="inherit" />
@@ -139,6 +153,6 @@ function Header(props: HeaderProps) {
       </Box>
     </>
   );
-}
+};
 
 export default Header;

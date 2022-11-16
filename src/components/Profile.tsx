@@ -108,7 +108,7 @@ type PropsCert = {
 
 const H2: FC<PropsMidashi> = (props: PropsMidashi) => {
   return (
-    <Typography id={props.id} variant="h2" mt={props.top ? 0 : 4} mb={2}>
+    <Typography id={props.id} variant='h2' mt={props.top ? 0 : 4} mb={2}>
       {props.title}
     </Typography>
   );
@@ -116,7 +116,7 @@ const H2: FC<PropsMidashi> = (props: PropsMidashi) => {
 
 const H3: FC<PropsMidashi> = (props: PropsMidashi) => {
   return (
-    <Typography id={props.id} variant="h3" mt={4} mb={4}>
+    <Typography id={props.id} variant='h3' mt={4} mb={4}>
       {props.title}
     </Typography>
   );
@@ -134,7 +134,7 @@ const ItemAbout: FC<PropsAbout> = (props: PropsAbout) => {
 const ItemEdu: FC<PropsEdu> = (props: PropsEdu) => {
   return (
     <Box mt={2} mb={2} ml={1}>
-      <Typography color="text.disabled">{props.education.date}</Typography>
+      <Typography color='text.disabled'>{props.education.date}</Typography>
       <Typography>{props.education.ja}</Typography>
       <Typography>{props.education.en}</Typography>
     </Box>
@@ -144,7 +144,7 @@ const ItemEdu: FC<PropsEdu> = (props: PropsEdu) => {
 const ItemJob: FC<PropsJob> = (props: PropsJob) => {
   return (
     <Box mt={2} mb={2} ml={1}>
-      <Typography color="text.disabled">{props.job.date}</Typography>
+      <Typography color='text.disabled'>{props.job.date}</Typography>
       <Typography>{props.job.ja}</Typography>
       <Typography>{props.job.en}</Typography>
     </Box>

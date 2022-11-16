@@ -1,4 +1,7 @@
 export const information = {
+  name_ja: '立山 尚樹',
+  name_en: 'Naoki Tateyama',
+  account: 'naoki-tateyama',
   about: {
     ja: (
       <span>

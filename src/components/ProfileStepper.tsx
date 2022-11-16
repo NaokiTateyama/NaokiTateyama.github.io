@@ -100,7 +100,7 @@ function ProfileStepper() {
   return (
     <Box>
       <Box sx={{ minWidth: 200, top: '20px', position: 'sticky' }} mr={2}>
-        <Stepper activeStep={activeStep} orientation="vertical">
+        <Stepper activeStep={activeStep} orientation='vertical'>
           {steps.map((step, i) => {
             return (
               <Step key={i} active={true}>
