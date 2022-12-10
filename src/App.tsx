@@ -9,6 +9,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+import MobileAppBar from 'components/MobileAppBar';
 
 import { theme } from './styles/theme';
 
@@ -17,6 +18,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      {!isPC && <MobileAppBar />}
       <Header isPC={isPC} />
       <Container maxWidth="lg">
         <Box style={{ display: 'flex' }}>
