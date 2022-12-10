@@ -9,9 +9,9 @@ describe('Header', () => {
     render(
       <Header
         isPC={true}
-        name_ja={information.name_ja}
-        name_en={information.name_en}
-        account={information.account}
+        name_ja={information.author.ja}
+        name_en={information.author.en}
+        github={information.author.github}
         appBarDataTestId={appBarDataTestId}
       />
     );
@@ -24,9 +24,9 @@ describe('Header', () => {
     render(
       <Header
         isPC={false}
-        name_ja={information.name_ja}
-        name_en={information.name_en}
-        account={information.account}
+        name_ja={information.author.ja}
+        name_en={information.author.en}
+        github={information.author.github}
         appBarDataTestId={appBarDataTestId}
       />
     );

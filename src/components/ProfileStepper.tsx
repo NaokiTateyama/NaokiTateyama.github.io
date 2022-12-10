@@ -17,24 +17,24 @@ type StepType = {
 
 const steps = [
   {
-    id: 'about',
+    id: ID.ABOUT,
     label: <Typography style={{ cursor: 'pointer' }}>About</Typography>,
     description: <Box></Box>
   },
   {
-    id: 'job-experience',
+    id: ID.JOB_EXPERIENCE,
     label: (
       <Typography style={{ cursor: 'pointer' }}>Job experience</Typography>
     ),
     description: <Box></Box>
   },
   {
-    id: 'education',
+    id: ID.EDUCATION,
     label: <Typography style={{ cursor: 'pointer' }}>Education</Typography>,
     description: <Box></Box>
   },
   {
-    id: 'skills',
+    id: ID.SKILLS,
     label: <Typography style={{ cursor: 'pointer' }}>Skills</Typography>,
     description: (
       <Box>
@@ -56,7 +56,7 @@ const steps = [
     )
   },
   {
-    id: 'publications',
+    id: ID.PUBLICATIONS,
     label: <Typography style={{ cursor: 'pointer' }}>Publications</Typography>,
     description: (
       <Box>

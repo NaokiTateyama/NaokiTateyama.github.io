@@ -15,19 +15,19 @@ type Props = {
   isPC: boolean;
   name_ja: string;
   name_en: string;
-  account: string;
+  github: string;
   appBarDataTestId?: string;
   menuDataTestId?: string;
 };
 
-const Header = ({
+const Header: React.FC<Props> = ({
   isPC,
   name_ja,
   name_en,
-  account,
+  github,
   appBarDataTestId,
   menuDataTestId
-}: Props): JSX.Element => {
+}) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -144,7 +144,7 @@ const Header = ({
           <IconButton
             size="large"
             onClick={() =>
-              window.open(`https://github.com/${account}`, '_blank')
+              window.open(`https://github.com/${github}`, '_blank')
             }
           >
             <GitHubIcon fontSize="inherit" />

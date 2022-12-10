@@ -1,7 +1,9 @@
 export const information = {
-  name_ja: '立山 尚樹',
-  name_en: 'Naoki Tateyama',
-  account: 'naoki-tateyama',
+  author: {
+    ja: '立山 尚樹',
+    en: 'Naoki Tateyama',
+    github: 'https://github.com/naoki-tateyama'
+  },
   about: {
     ja: (
       <span>
@@ -138,7 +140,7 @@ export const information = {
   skills: {
     programming: {
       language: ['Python', 'JavaScript'],
-      framework: ['ReactJS', 'Django', 'TensorFlow']
+      frameworks: ['ReactJS', 'Django', 'TensorFlow']
     },
     certificates: [
       {

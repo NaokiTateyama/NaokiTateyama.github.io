@@ -20,9 +20,9 @@ function App() {
       <CssBaseline />
       <Header
         isPC={isPC}
-        name_ja={information.name_ja}
-        name_en={information.name_en}
-        account={information.account}
+        name_ja={information.author.ja}
+        name_en={information.author.en}
+        github={information.author.github}
       />
       <Container maxWidth="lg">
         <Box style={{ display: 'flex' }}>
@@ -30,7 +30,7 @@ function App() {
           <Profile />
         </Box>
       </Container>
-      <Footer name_en={information.name_en} />
+      <Footer name_en={information.author.en} />
     </ThemeProvider>
   );
 }
