@@ -16,13 +16,14 @@ type StepType = {
   description?: Array<JSX.Element>;
 };
 
-const steps = BIO_ORDER.map((bio) => {
+const steps = BIO_ORDER.map((bio, i) => {
   return {
     id: bio.id,
     label: <Typography style={{ cursor: 'pointer' }}>{bio.title}</Typography>,
     description: bio.children?.map((child) => {
       return (
         <Typography
+          key={`description-${bio.id}-${child.id}-${i}`}
           style={{ cursor: 'pointer' }}
           onClick={() => jumpTo(child.id)}
           gutterBottom
@@ -51,7 +52,7 @@ function ProfileStepper() {
         <Stepper activeStep={activeStep} orientation="vertical">
           {steps.map((step, i) => {
             return (
-              <Step key={i} active={true}>
+              <Step key={`step-${i}`} active={true}>
                 <StepLabel icon={<></>} onClick={() => onClickStep(i, step)}>
                   {step.label}
                 </StepLabel>

@@ -39,9 +39,9 @@ const Component: React.FC<Props> = ({
         <Divider sx={{ borderBottomWidth: 2 }} />
       )}
       {contents &&
-        contents.map((content) => {
+        contents.map((content, i) => {
           return (
-            <Box mt={2} mb={2} ml={1}>
+            <Box key={`content-${id}-${i}`} mt={2} mb={2} ml={1}>
               {content.date && (
                 <Typography color="text.disabled">{content.date}</Typography>
               )}

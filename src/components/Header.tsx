@@ -93,6 +93,7 @@ const Header: React.FC<Props> = ({
               {BIO_ORDER.map((bio) => {
                 return (
                   <MenuItem
+                    key={`menu-${bio.id}`}
                     sx={{
                       justifyContent: 'center',
                       fontSize: '1.2rem',

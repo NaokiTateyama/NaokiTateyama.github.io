@@ -8,7 +8,7 @@ function Profile() {
     <Box>
       {BIO_ORDER.map((bio, i) => {
         return (
-          <>
+          <div key={`section-${bio.id}`}>
             <Section
               id={bio.id}
               sectionType={SECTION_TYPE.SECTION}
@@ -20,6 +20,7 @@ function Profile() {
               bio.children.map((child) => {
                 return (
                   <Section
+                    key={`subsection-${child.id}`}
                     id={child.id}
                     sectionType={SECTION_TYPE.SUBSECTION}
                     title={child.title}
@@ -27,7 +28,7 @@ function Profile() {
                   />
                 );
               })}
-          </>
+          </div>
         );
       })}
     </Box>
