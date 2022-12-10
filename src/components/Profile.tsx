@@ -1,28 +1,29 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import { Section, SECTION_TYPE } from './Section';
-import { pageContents } from 'PageContents';
+import { BIO_ORDER } from './../Information';
 
 function Profile() {
   return (
     <Box>
-      {pageContents.map((pageContent) => {
+      {BIO_ORDER.map((bio, i) => {
         return (
           <>
             <Section
-              id={pageContent.id}
+              id={bio.id}
               sectionType={SECTION_TYPE.SECTION}
-              title={pageContent.title}
-              contents={pageContent.contents}
+              title={bio.title}
+              contents={bio.contents}
+              top={i === 0}
             />
-            {pageContent.children &&
-              pageContent.children.map((childContent) => {
+            {bio.children &&
+              bio.children.map((child) => {
                 return (
                   <Section
-                    id={childContent.id}
+                    id={child.id}
                     sectionType={SECTION_TYPE.SUBSECTION}
-                    title={childContent.title}
-                    contents={childContent.contents}
+                    title={child.title}
+                    contents={child.contents}
                   />
                 );
               })}

@@ -9,22 +9,17 @@ import Menu from '@mui/material/Menu';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MenuIcon from '@mui/icons-material/Menu';
 
-import { jumpTo, ID } from 'utils/JumpTo';
+import { AUTHOR, BIO_ORDER } from 'Information';
+import { jumpTo } from 'utils/JumpTo';
 
 type Props = {
   isPC: boolean;
-  name_ja: string;
-  name_en: string;
-  github: string;
   appBarDataTestId?: string;
   menuDataTestId?: string;
 };
 
 const Header: React.FC<Props> = ({
   isPC,
-  name_ja,
-  name_en,
-  github,
   appBarDataTestId,
   menuDataTestId
 }) => {
@@ -95,56 +90,36 @@ const Header: React.FC<Props> = ({
               onClose={handleClose}
               data-testid={menuDataTestId}
             >
-              <MenuItem
-                sx={{ justifyContent: 'center', fontSize: '1.2rem', margin: 2 }}
-                onClick={() => handleJump(ID.ABOUT)}
-              >
-                About
-              </MenuItem>
-              <MenuItem
-                sx={{ justifyContent: 'center', fontSize: '1.2rem', margin: 2 }}
-                onClick={() => handleJump(ID.JOB_EXPERIENCE)}
-              >
-                Job experience
-              </MenuItem>
-              <MenuItem
-                sx={{ justifyContent: 'center', fontSize: '1.2rem', margin: 2 }}
-                onClick={() => handleJump(ID.EDUCATION)}
-              >
-                Education
-              </MenuItem>
-              <MenuItem
-                sx={{ justifyContent: 'center', fontSize: '1.2rem', margin: 2 }}
-                onClick={() => handleJump(ID.SKILLS)}
-              >
-                Skills
-              </MenuItem>
-              <MenuItem
-                sx={{ justifyContent: 'center', fontSize: '1.2rem', margin: 2 }}
-                onClick={() => handleJump(ID.PUBLICATIONS)}
-              >
-                Publications
-              </MenuItem>
+              {BIO_ORDER.map((bio) => {
+                return (
+                  <MenuItem
+                    sx={{
+                      justifyContent: 'center',
+                      fontSize: '1.2rem',
+                      margin: 2
+                    }}
+                    onClick={() => handleJump(bio.id)}
+                  >
+                    {bio.title}
+                  </MenuItem>
+                );
+              })}
             </Menu>
           </Toolbar>
         </AppBar>
       )}
-      <Box
-        style={{ textAlign: 'center' }}
-        mt={isPC ? 3 : 0}
-        mb={isPC ? 3 : 0}
-      >
+      <Box style={{ textAlign: 'center' }} mt={isPC ? 3 : 0} mb={isPC ? 3 : 0}>
         <Typography variant="h2" gutterBottom>
-          {name_ja}
+          {AUTHOR.ja}
         </Typography>
         <Typography variant="h2" gutterBottom>
-          {name_en}
+          {AUTHOR.en}
         </Typography>
         <Box>
           <IconButton
             size="large"
             onClick={() =>
-              window.open(`https://github.com/${github}`, '_blank')
+              window.open(`https://github.com/${AUTHOR.github}`, '_blank')
             }
           >
             <GitHubIcon fontSize="inherit" />

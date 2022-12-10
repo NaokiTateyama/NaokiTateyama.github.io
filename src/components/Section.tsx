@@ -2,6 +2,7 @@ import React from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
+import { Content } from 'Information';
 
 export const SECTION_TYPE = {
   SECTION: 'section',
@@ -9,27 +10,27 @@ export const SECTION_TYPE = {
 };
 type SectionType = typeof SECTION_TYPE.SECTION | typeof SECTION_TYPE.SUBSECTION;
 
-export type Content = {
-  gray?: string | JSX.Element;
-  main: string | JSX.Element;
-  sub?: string | JSX.Element;
-};
-
 type Props = {
   id: string;
   sectionType: SectionType;
   title: string;
   contents?: Array<Content>;
+  top?: boolean;
 };
 
-const Component: React.FC<Props> = ({ id, sectionType, title, contents }) => {
+const Component: React.FC<Props> = ({
+  id,
+  sectionType,
+  title,
+  contents,
+  top
+}) => {
   return (
     <>
-      {/* top ? 0 :  */}
       <Typography
         id={id}
         variant={sectionType === SECTION_TYPE.SECTION ? 'h2' : 'h3'}
-        mt={4}
+        mt={top ? 0 : 4}
         mb={2}
       >
         {title}
@@ -41,11 +42,11 @@ const Component: React.FC<Props> = ({ id, sectionType, title, contents }) => {
         contents.map((content) => {
           return (
             <Box mt={2} mb={2} ml={1}>
-              {content.gray && (
-                <Typography color="text.disabled">{content.gray}</Typography>
+              {content.date && (
+                <Typography color="text.disabled">{content.date}</Typography>
               )}
-              <Typography>{content.main}</Typography>
-              {content.sub && <Typography>{content.sub}</Typography>}
+              {content.ja && <Typography>{content.ja}</Typography>}
+              {content.en && <Typography>{content.en}</Typography>}
             </Box>
           );
         })}

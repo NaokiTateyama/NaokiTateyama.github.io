@@ -11,26 +11,20 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 import { theme } from './styles/theme';
-import { information } from './Information';
 
 function App() {
   const isPC = useMediaQuery('(min-width:600px)');
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header
-        isPC={isPC}
-        name_ja={information.author.ja}
-        name_en={information.author.en}
-        github={information.author.github}
-      />
+      <Header isPC={isPC} />
       <Container maxWidth="lg">
         <Box style={{ display: 'flex' }}>
           {isPC && <ProfileStepper />}
           <Profile />
         </Box>
       </Container>
-      <Footer name_en={information.author.en} />
+      <Footer />
     </ThemeProvider>
   );
 }

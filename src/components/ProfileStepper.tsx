@@ -1,90 +1,38 @@
-import React, { ReactNode, useState } from 'react';
+import React, { useState } from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import StepContent from '@mui/material/StepContent';
-
-import { jumpTo, ID } from 'utils/JumpTo';
 import { styled } from '@mui/material/styles';
+
+import { BIO_ORDER } from 'Information';
+import { jumpTo } from 'utils/JumpTo';
 
 type StepType = {
   id: string;
-  label: string | ReactNode;
-  description: string | ReactNode;
+  label: string | JSX.Element;
+  description?: Array<JSX.Element>;
 };
 
-const steps = [
-  {
-    id: ID.ABOUT,
-    label: <Typography style={{ cursor: 'pointer' }}>About</Typography>,
-    description: <Box></Box>
-  },
-  {
-    id: ID.JOB_EXPERIENCE,
-    label: (
-      <Typography style={{ cursor: 'pointer' }}>Job experience</Typography>
-    ),
-    description: <Box></Box>
-  },
-  {
-    id: ID.EDUCATION,
-    label: <Typography style={{ cursor: 'pointer' }}>Education</Typography>,
-    description: <Box></Box>
-  },
-  {
-    id: ID.SKILLS,
-    label: <Typography style={{ cursor: 'pointer' }}>Skills</Typography>,
-    description: (
-      <Box>
+const steps = BIO_ORDER.map((bio) => {
+  return {
+    id: bio.id,
+    label: <Typography style={{ cursor: 'pointer' }}>{bio.title}</Typography>,
+    description: bio.children?.map((child) => {
+      return (
         <Typography
           style={{ cursor: 'pointer' }}
-          onClick={() => jumpTo(ID.PROGRAMMING)}
+          onClick={() => jumpTo(child.id)}
           gutterBottom
         >
-          Programming
+          {child.title}
         </Typography>
-        <Typography
-          style={{ cursor: 'pointer' }}
-          onClick={() => jumpTo(ID.CERTIFICATES)}
-          gutterBottom
-        >
-          Certificates
-        </Typography>
-      </Box>
-    )
-  },
-  {
-    id: ID.PUBLICATIONS,
-    label: <Typography style={{ cursor: 'pointer' }}>Publications</Typography>,
-    description: (
-      <Box>
-        <Typography
-          style={{ cursor: 'pointer' }}
-          onClick={() => jumpTo(ID.JOURNAL)}
-          gutterBottom
-        >
-          Journal article
-        </Typography>
-        <Typography
-          style={{ cursor: 'pointer' }}
-          onClick={() => jumpTo(ID.INT_CONF)}
-          gutterBottom
-        >
-          International conference
-        </Typography>
-        <Typography
-          style={{ cursor: 'pointer' }}
-          onClick={() => jumpTo(ID.DOM_CONF)}
-          gutterBottom
-        >
-          Domestic conference
-        </Typography>
-      </Box>
-    )
-  }
-];
+      );
+    })
+  };
+});
 
 const CustomStepContent = styled(StepContent)({
   '&.MuiStepContent-root': { borderLeft: '1px solid #757575' }
@@ -100,7 +48,7 @@ function ProfileStepper() {
   return (
     <Box>
       <Box sx={{ minWidth: 200, top: '20px', position: 'sticky' }} mr={2}>
-        <Stepper activeStep={activeStep} orientation='vertical'>
+        <Stepper activeStep={activeStep} orientation="vertical">
           {steps.map((step, i) => {
             return (
               <Step key={i} active={true}>
