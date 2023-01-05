@@ -12,7 +12,7 @@ const Footer = ({ dataTestId }: Props): JSX.Element => {
     <footer>
       <Box style={{ textAlign: 'center' }} mt={2} mb={2}>
         <Typography variant="body2" data-testid={dataTestId}>
-          2022 &copy; {AUTHOR.en}
+          2023 &copy; {AUTHOR.en}
         </Typography>
       </Box>
     </footer>

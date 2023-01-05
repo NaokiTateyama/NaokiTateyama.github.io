@@ -28,9 +28,7 @@ const Header: React.FC<Props> = ({
       <Box>
         <IconButton
           size="large"
-          onClick={() =>
-            window.open(`https://github.com/${AUTHOR.github}`, '_blank')
-          }
+          onClick={() => window.open(AUTHOR.github, '_blank')}
         >
           <GitHubIcon fontSize="inherit" />
         </IconButton>
