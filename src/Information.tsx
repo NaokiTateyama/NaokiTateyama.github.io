@@ -86,37 +86,14 @@ export const BIO: { [key: string]: Bio } = {
           {
             en: (
               <span>
-                <b>Language: </b>Python, JavaScript
+                <b>Language: </b>Python, TypeScript, JavaScript
               </span>
             )
           },
           {
             en: (
               <span>
-                <b>Framework: </b>React, Django, TensorFlow
-              </span>
-            )
-          }
-        ]
-      },
-      {
-        id: 'certificates',
-        title: 'Certificates',
-        contents: [
-          {
-            ja: '準中型自動車免許',
-            en: 'Driving license in Japan'
-          },
-          {
-            ja: '3級ファイナンシャル・プランニング技能士',
-            en: '3rd Certified Skilled Professional of Financial Planning'
-          },
-          {
-            ja: 'メンタルヘルス・マネジメント検定Ⅱ種・Ⅲ種',
-            en: (
-              <span>
-                Certification Test for Mental Health Management &#8545; &
-                &#8546;
+                <b>Framework: </b>Reactjs, Django, TensorFlow
               </span>
             )
           }
@@ -132,6 +109,17 @@ export const BIO: { [key: string]: Bio } = {
         id: 'journal',
         title: 'Journal article',
         contents: [
+          {
+            en: (
+              <span>
+                <u>Naoki Tateyama</u>, Ryota Yokomura, Yuki Ban, and Shin'ichi
+                Warisawa, and Rui Fukui. Planning the Future in a Longer
+                Perspective: Effects of a One-week Forecast of Mental Health.
+                Proc. ACM Interact. Mob. Wearable Ubiquitous Technol., Vol. 8,
+                No. 1, Article 19, 2024.
+              </span>
+            )
+          },
           {
             en: (
               <span>
@@ -222,11 +210,20 @@ export const BIO: { [key: string]: Bio } = {
           {
             ja: (
               <span>
+                <u>立山尚樹</u>, 割澤伸一, 福井類.
+                メンタルヘルス指標予測モデルを用いたイベントの相互影響を踏まえた休憩・労働計画支援.
+                ロボティクス・メカトロニクス講演会講演概要集, Vol. 2023, pp.
+                2P2-H26, 2023.
+              </span>
+            )
+          },
+          {
+            ja: (
+              <span>
                 神代快, <u>立山尚樹</u>, 三谷達郎, 割澤伸一, 福井類.
-                手指動作計測に基づくアバターの上半身ジェスチャ生成による意思・態度伝達システム
-                - Ultraleapを用いたプロトタイピング -.
-                第23回システムインテグレーション部門講演会（SI2022）,
-                pp. 176-181. 計測制御学会, 2022.
+                手指動作計測に基づくアバターの上半身ジェスチャ生成による意思・態度伝達システム.
+                第23回システムインテグレーション部門講演会（SI2022）, pp.
+                176-181. 計測制御学会, 2022.
               </span>
             )
           },
