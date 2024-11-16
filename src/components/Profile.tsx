@@ -1,14 +1,13 @@
-import React from 'react';
 import Box from '@mui/material/Box';
-import { Section, SECTION_TYPE } from './Section';
 import { BIO_ORDER } from './../Information';
+import { SECTION_TYPE, Section } from './Section';
 
 function Profile() {
   return (
     <Box>
       {BIO_ORDER.map((bio, i) => {
         return (
-          <div key={`section-${bio.id}`}>
+          <Box key={`section-${bio.id}`}>
             <Section
               id={bio.id}
               sectionType={SECTION_TYPE.SECTION}
@@ -28,7 +27,7 @@ function Profile() {
                   />
                 );
               })}
-          </div>
+          </Box>
         );
       })}
     </Box>

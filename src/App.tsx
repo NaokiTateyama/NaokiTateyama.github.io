@@ -1,16 +1,13 @@
-import React from 'react';
-import Profile from './components/Profile';
-import ProfileStepper from 'components/ProfileStepper';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-
-import Header from './components/Header';
+import { ThemeProvider } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import Footer from './components/Footer';
-import MobileAppBar from 'components/MobileAppBar';
-
+import Header from './components/Header';
+import MobileAppBar from './components/MobileAppBar';
+import Profile from './components/Profile';
+import ProfileStepper from './components/ProfileStepper';
 import { theme } from './styles/theme';
 
 function App() {
@@ -21,7 +18,7 @@ function App() {
       {!isPC && <MobileAppBar />}
       <Header isPC={isPC} />
       <Container maxWidth="lg">
-        <Box style={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex' }}>
           {isPC && <ProfileStepper />}
           <Profile />
         </Box>

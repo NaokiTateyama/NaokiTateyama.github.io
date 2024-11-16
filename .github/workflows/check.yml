@@ -1,16 +1,20 @@
-name: 'check'
+name: 'Code check'
 on: push
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: biomejs/setup-biome@v2
+        with:
+          version: latest
+      - name: Run Biome
+        run: biome ci .
+      - uses: actions/setup-node@v4
         with:
           node-version-file: '.node-version'
           registry-url: https://npm.pkg.github.com/
-          cache: 'npm'
       - name: Install dependencies
         run: npm install
-      - name: Run check
-        run: npm run check
+      - name: Run typecheck
+        run: npm run typecheck

@@ -1,8 +1,8 @@
-import React from 'react';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
-import { Content } from 'Information';
+import Typography from '@mui/material/Typography';
+import React from 'react';
+import { Content } from '../Information';
 
 export const SECTION_TYPE = {
   SECTION: 'section',

@@ -1,5 +1,6 @@
-import Footer from './Footer';
 import { render, screen } from '@testing-library/react';
+import { describe, expect, test } from 'vitest';
+import Footer from './Footer';
 
 describe('Footer', () => {
   test('年が最新のものになっているか', () => {

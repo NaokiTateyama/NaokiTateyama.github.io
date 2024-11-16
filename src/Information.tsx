@@ -1,7 +1,10 @@
+import Link from '@mui/material/Link';
+import { ReactNode } from 'react';
+
 export type Content = {
-  date?: string | JSX.Element;
-  ja?: string | JSX.Element;
-  en?: string | JSX.Element;
+  date?: string | ReactNode;
+  ja?: string | ReactNode;
+  en?: string | ReactNode;
 };
 
 export type Bio = {
@@ -116,7 +119,15 @@ export const BIO: { [key: string]: Bio } = {
                 Warisawa, and Rui Fukui. Planning the Future in a Longer
                 Perspective: Effects of a One-week Forecast of Mental Health.
                 Proc. ACM Interact. Mob. Wearable Ubiquitous Technol., Vol. 8,
-                No. 1, Article 19, 2024.
+                No. 1, Article 19, 2024. <br />
+                DOI:{' '}
+                <Link
+                  href="https://doi.org/10.1145/3643538"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  10.1145/3643538
+                </Link>
               </span>
             )
           },
@@ -125,7 +136,15 @@ export const BIO: { [key: string]: Bio } = {
               <span>
                 <u>Naoki Tateyama</u>, Rui Fukui, and Shin'ichi Warisawa. Mood
                 prediction based on calendar events using multitask learning.
-                IEEE Access, Vol. 10, pp. 79747-79759, 2022.
+                IEEE Access, Vol. 10, pp. 79747-79759, 2022. <br />
+                DOI:{' '}
+                <Link
+                  href="https://doi.org/10.1109/access.2022.3193778"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  10.1109/ACCESS.2022.3193778
+                </Link>
               </span>
             )
           },
