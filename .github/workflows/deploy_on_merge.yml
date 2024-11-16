@@ -1,0 +1,16 @@
+name: 'deploy on merge'
+on: push
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          registry-url: https://npm.pkg.github.com/
+      - name: Install dependencies
+        run: npm install
+      - name: Deploy
+        run: npm run deploy
