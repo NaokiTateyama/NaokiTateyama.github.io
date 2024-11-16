@@ -1,7 +1,9 @@
+import { ReactNode } from 'react';
+
 export type Content = {
-  date?: string | JSX.Element;
-  ja?: string | JSX.Element;
-  en?: string | JSX.Element;
+  date?: string | ReactNode;
+  ja?: string | ReactNode;
+  en?: string | ReactNode;
 };
 
 export type Bio = {

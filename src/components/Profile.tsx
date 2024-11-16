@@ -1,7 +1,6 @@
-import React from 'react';
 import Box from '@mui/material/Box';
-import { Section, SECTION_TYPE } from './Section';
 import { BIO_ORDER } from './../Information';
+import { SECTION_TYPE, Section } from './Section';
 
 function Profile() {
   return (

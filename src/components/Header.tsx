@@ -1,10 +1,9 @@
-import React from 'react';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 import GitHubIcon from '@mui/icons-material/GitHub';
-
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
 import { AUTHOR } from 'Information';
+import React from 'react';
 
 type Props = {
   isPC: boolean;
@@ -12,11 +11,7 @@ type Props = {
   menuDataTestId?: string;
 };
 
-const Header: React.FC<Props> = ({
-  isPC,
-  appBarDataTestId,
-  menuDataTestId
-}) => {
+const Header: React.FC<Props> = ({ isPC }) => {
   return (
     <Box style={{ textAlign: 'center' }} mt={isPC ? 3 : 0} mb={isPC ? 3 : 0}>
       <Typography variant="h2" gutterBottom>

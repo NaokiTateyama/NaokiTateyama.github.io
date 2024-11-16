@@ -1,15 +1,14 @@
-import React from 'react';
-import Profile from './components/Profile';
-import ProfileStepper from 'components/ProfileStepper';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import ProfileStepper from 'components/ProfileStepper';
+import Profile from './components/Profile';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
 import MobileAppBar from 'components/MobileAppBar';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 import { theme } from './styles/theme';
 
