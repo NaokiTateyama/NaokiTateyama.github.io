@@ -2,8 +2,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { AUTHOR } from 'Information';
 import React from 'react';
+import { AUTHOR } from './../Information';
 
 type Props = {
   isPC: boolean;

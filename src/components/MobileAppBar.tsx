@@ -5,9 +5,8 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
 import React, { useState } from 'react';
-
-import { BIO_ORDER } from 'Information';
-import { jumpTo } from 'utils/JumpTo';
+import { BIO_ORDER } from '../Information';
+import { jumpTo } from '../utils/JumpTo';
 
 type Props = {
   appBarDataTestId?: string;

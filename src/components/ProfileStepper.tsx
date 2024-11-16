@@ -6,9 +6,8 @@ import Stepper from '@mui/material/Stepper';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import { useState } from 'react';
-
-import { BIO_ORDER } from 'Information';
-import { jumpTo } from 'utils/JumpTo';
+import { BIO_ORDER } from '../Information';
+import { jumpTo } from '../utils/JumpTo';
 
 const CustomStepContent = styled(StepContent)({
   '&.MuiStepContent-root': { borderLeft: '1px solid #757575' }
