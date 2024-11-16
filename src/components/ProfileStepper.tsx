@@ -28,7 +28,7 @@ function ProfileStepper() {
             return (
               <Step key={`step-${i}`} active={true}>
                 <StepLabel icon={<></>} onClick={() => onClickStep(i, bio.id)}>
-                  <Typography style={{ cursor: 'pointer' }}>
+                  <Typography sx={{ cursor: 'pointer' }}>
                     {bio.title}
                   </Typography>
                 </StepLabel>
@@ -37,7 +37,7 @@ function ProfileStepper() {
                     return (
                       <Typography
                         key={`description-${bio.id}-${child.id}-${i}`}
-                        style={{ cursor: 'pointer' }}
+                        sx={{ cursor: 'pointer' }}
                         onClick={() => jumpTo(child.id)}
                         gutterBottom
                       >

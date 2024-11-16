@@ -7,7 +7,7 @@ function Profile() {
     <Box>
       {BIO_ORDER.map((bio, i) => {
         return (
-          <div key={`section-${bio.id}`}>
+          <Box key={`section-${bio.id}`}>
             <Section
               id={bio.id}
               sectionType={SECTION_TYPE.SECTION}
@@ -27,7 +27,7 @@ function Profile() {
                   />
                 );
               })}
-          </div>
+          </Box>
         );
       })}
     </Box>

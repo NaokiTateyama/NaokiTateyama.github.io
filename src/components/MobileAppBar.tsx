@@ -1,5 +1,6 @@
 import MenuIcon from '@mui/icons-material/Menu';
 import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -46,7 +47,7 @@ const MobileAppBar: React.FC<Props> = ({
       data-testid={appBarDataTestId}
     >
       <Toolbar>
-        <div style={{ flexGrow: 1 }}></div>
+        <Box sx={{ flexGrow: 1 }}></Box>
         <IconButton
           sx={{ justifyContent: 'flex-end' }}
           size="large"
@@ -59,11 +60,13 @@ const MobileAppBar: React.FC<Props> = ({
         </IconButton>
         <Menu
           id="menu-appbar"
-          PaperProps={{
-            style: { width: '100%' }
-          }}
-          BackdropProps={{
-            style: { backgroundColor: 'rgba(1,1,1,0.6)' }
+          slotProps={{
+            paper: { sx: { width: '100%' } },
+            root: {
+              slotProps: {
+                backdrop: { sx: { backgroundColor: 'rgba(1,1,1,0.6)' } }
+              }
+            }
           }}
           TransitionProps={{
             timeout: 0

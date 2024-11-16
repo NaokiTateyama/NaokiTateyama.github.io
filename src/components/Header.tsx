@@ -13,7 +13,7 @@ type Props = {
 
 const Header: React.FC<Props> = ({ isPC }) => {
   return (
-    <Box style={{ textAlign: 'center' }} mt={isPC ? 3 : 0} mb={isPC ? 3 : 0}>
+    <Box sx={{ textAlign: 'center' }} mt={isPC ? 3 : 0} mb={isPC ? 3 : 0}>
       <Typography variant="h2" gutterBottom>
         {AUTHOR.ja}
       </Typography>

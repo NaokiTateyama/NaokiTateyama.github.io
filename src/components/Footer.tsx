@@ -9,7 +9,7 @@ type Props = {
 const Footer = ({ dataTestId }: Props) => {
   return (
     <footer>
-      <Box style={{ textAlign: 'center' }} mt={2} mb={2}>
+      <Box sx={{ textAlign: 'center' }} mt={2} mb={2}>
         <Typography variant="body2" data-testid={dataTestId}>
           2024 &copy; {AUTHOR.en}
         </Typography>

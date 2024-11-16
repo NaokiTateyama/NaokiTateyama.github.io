@@ -18,7 +18,7 @@ function App() {
       {!isPC && <MobileAppBar />}
       <Header isPC={isPC} />
       <Container maxWidth="lg">
-        <Box style={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex' }}>
           {isPC && <ProfileStepper />}
           <Profile />
         </Box>
